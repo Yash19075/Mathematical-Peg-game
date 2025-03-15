@@ -1,0 +1,30 @@
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+.row {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.peg-board {
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+}
+
+.peg{
+    border-radius: 50%;
+    background-color: black;
+    color: white;
+    width: 40px;
+    /* align-items: center; */
+    /* height: 20px; */
+    text-align: center;
+}
+
+

@@ -1,0 +1,12 @@
+.row {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.peg-board {
+    display: inline-block;
+    margin-left: 100px;
+}
+
+

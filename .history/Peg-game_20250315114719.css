@@ -1,0 +1,12 @@
+.row {
+    display: flex;
+
+}
+
+.peg-board {
+    display: flex;
+}
+
+.peg{
+    display: inline-block;
+}

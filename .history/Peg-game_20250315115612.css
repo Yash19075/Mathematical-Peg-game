@@ -1,0 +1,25 @@
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+.row {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.peg-board {
+    display: flex; 
+    flex-direction: column;
+}
+
+.peg{
+    border-radius: 50%;
+    background-color: black;
+    color: white;
+}
+
+
