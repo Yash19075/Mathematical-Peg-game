@@ -5,11 +5,7 @@ let peg = [
     [1,1,1,1],
     [1,1,1,1,1]
 ];
-var moves = [];
-for(let r = 0; r<20;r++)
-{
-    moves[r] = [];
-}
+var moves= [];
 
 let pegs = document.querySelectorAll(".peg");
 console.log(pegs);

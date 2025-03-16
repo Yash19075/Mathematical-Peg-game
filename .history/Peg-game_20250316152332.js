@@ -5,11 +5,7 @@ let peg = [
     [1,1,1,1],
     [1,1,1,1,1]
 ];
-var moves = [];
-for(let r = 0; r<20;r++)
-{
-    moves[r] = [];
-}
+var moves= [];
 
 let pegs = document.querySelectorAll(".peg");
 console.log(pegs);
@@ -36,7 +32,6 @@ function selectPeg(event)
     let colNO = selected.dataset.col;
     console.log(`Selected ${rowNO}, ${colNO}`);
     console.log(`The value of peg is ${peg[rowNO][colNO]}`);
-    validMoves();
     console.log(moves)
 }
 
