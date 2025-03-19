@@ -44,7 +44,7 @@ h1 {
 }
 
 #reset-btn {
-    margin-top: 15px;
+    margin-top: 25px;
     padding: 10px 20px;
     font-size: 16px;
     background-color: red;
@@ -67,5 +67,4 @@ h1 {
 
 .Result{
     font-size: 30px;
-    font-weight: bold;
 }

@@ -118,7 +118,6 @@ function movePeg(event) {
     });
 
     selectedPeg = null; 
-    gameover();
 }
 
 function move_to_index(i,j)
@@ -191,10 +190,8 @@ function resetGame() {
             index++;
         }
     }
-    document.querySelector(".Result").innerHTML = "";
+
     selectedPeg = null;
-    countMoves = 0;
-    document.querySelector(".move-counter").innerHTML = `Moves: ${countMoves}`;
 }
 
 function gameover()
@@ -211,14 +208,6 @@ function gameover()
             }
         }
     }
-    if(pegCount == 1)
-    {
-        document.querySelector(".Result").innerHTML = "You won";
-        document.querySelector(".Result").style.color = "Green";
-    }
-    else if (!hasMoves)
-    {
-        document.querySelector(".Result").innerHTML = "You lost";
-        document.querySelector(".Result").style.color = "Red";
-    }
+
+
 }

@@ -32,7 +32,6 @@ for(let i = 0; i< peg.length; i++)
 // for (let peg of pegs) {
 //     console.log(`Peg at index ${peg.dataset.row}, ${peg.dataset.col}`);
 // }
-let countMoves = 0;
 let selectedPeg;
 function selectPeg(event)
 {
@@ -55,8 +54,8 @@ function selectPeg(event)
     selectedPeg = selected;
     // console.log("Selected peg is ", selectedPeg);
     // console.log(moves)
-    // if(moveCount === 0)
-    //     alert("No moves");
+    if(moveCount === 0)
+        alert("No moves");
     for(let i = 0; i<moveCount;i++)
     {
         let target_row = moves[i][2];
@@ -106,8 +105,7 @@ function movePeg(event) {
     pegs[selectedIndex].style.backgroundColor = "white";
     pegs[middleIndex].style.backgroundColor = "white";
     pegs[targetIndex].style.backgroundColor = "black";
-    countMoves++;
-    document.querySelector(".move-counter").innerHTML = `Moves: ${countMoves}`;
+   
 
 
     pegs.forEach(peg => {
@@ -118,7 +116,6 @@ function movePeg(event) {
     });
 
     selectedPeg = null; 
-    gameover();
 }
 
 function move_to_index(i,j)
@@ -169,56 +166,3 @@ function validMoves(row, col) {
     return count;
 }
 
-function resetGame() {
-    peg = [
-        [0],
-        [1,1],
-        [1,1,1],
-        [1,1,1,1],
-        [1,1,1,1,1]
-    ];
-
-    let index = 0;
-    for (let i = 0; i < peg.length; i++) {
-        for (let j = 0; j < peg[i].length; j++) {
-            pegs[index].dataset.row = i;
-            pegs[index].dataset.col = j;
-            if (peg[i][j] === 1) {
-                pegs[index].style.backgroundColor = "black";
-            } else {
-                pegs[index].style.backgroundColor = "white";
-            }
-            index++;
-        }
-    }
-    document.querySelector(".Result").innerHTML = "";
-    selectedPeg = null;
-    countMoves = 0;
-    document.querySelector(".move-counter").innerHTML = `Moves: ${countMoves}`;
-}
-
-function gameover()
-{
-    let pegCount = 0
-    let hasMoves = false;
-    for (let i = 0; i < peg.length; i++) {
-        for (let j = 0; j < peg[i].length; j++) {
-            if (peg[i][j] === 1) {
-                pegCount++;
-                if (validMoves(i, j) > 0) {
-                    hasMoves = true; // There's at least one valid move
-                }
-            }
-        }
-    }
-    if(pegCount == 1)
-    {
-        document.querySelector(".Result").innerHTML = "You won";
-        document.querySelector(".Result").style.color = "Green";
-    }
-    else if (!hasMoves)
-    {
-        document.querySelector(".Result").innerHTML = "You lost";
-        document.querySelector(".Result").style.color = "Red";
-    }
-}

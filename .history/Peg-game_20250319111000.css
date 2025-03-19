@@ -44,7 +44,7 @@ h1 {
 }
 
 #reset-btn {
-    margin-top: 15px;
+    margin-top: 25px;
     padding: 10px 20px;
     font-size: 16px;
     background-color: red;
@@ -60,7 +60,7 @@ h1 {
 
 .move-counter {
     font-size: 25px;
-    margin-top: 15px;
+    margin-top: 10px;
     margin-bottom: 0px;
     color: green;
 }

@@ -193,8 +193,6 @@ function resetGame() {
     }
     document.querySelector(".Result").innerHTML = "";
     selectedPeg = null;
-    countMoves = 0;
-    document.querySelector(".move-counter").innerHTML = `Moves: ${countMoves}`;
 }
 
 function gameover()

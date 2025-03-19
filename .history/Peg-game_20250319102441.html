@@ -13,7 +13,7 @@
         <p>Select a peg and jump over another peg to an empty space!</p>
         <p>Goal: Leave only one peg on the board.</p>
         
-        <div class="move-counter">Moves: 0</div>
+        <div id="move-counter">Moves: 0</div>
         
         <div class="peg-board">
             <div class="row">
@@ -42,7 +42,7 @@
                 <div class="peg" onclick="selectPeg(event)"></div>
             </div>
         </div>
-        <div class="Result"></div>
+
         <button id="reset-btn" onclick="resetGame()">Reset Game</button>
     </div>
 
