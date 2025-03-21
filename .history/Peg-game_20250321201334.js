@@ -28,7 +28,7 @@ for(let i = 0; i< peg.length; i++)
             index++;
         }    
 }
-let moveCount;
+
 // for (let peg of pegs) {
 //     console.log(`Peg at index ${peg.dataset.row}, ${peg.dataset.col}`);
 // }
@@ -36,41 +36,19 @@ let countMoves = 0;
 let selectedPeg = null;
 function selectPeg(event)
 {
-    // if(selectedPeg != null)
-
-
-    // if(selectedPeg != null) 
-    //     selectPeg = null;
-    // console.log("CLICKED ELEMENT:", event.target);
-    // console.log("DATASET:", event.target.dataset);
+    if(selectedPeg != null) 
+        selectPeg = null;
+    // console.log("👉 CLICKED ELEMENT:", event.target);
+    // console.log("🔍 DATASET:", event.target.dataset);
+    let moveCount;
     let selected = event.target;
-    if(selectedPeg != selected || selectedPeg != null)
-    {   
-        if (selected.style.backgroundColor === "green")
-        {
-            selected.addEventListener("click", movePeg);
-        }
-            
-        else
-        {
-        for(let i = 0; i<moveCount;i++)
-            {
-                console.log("Hello");
-                let target_row = moves[i][2];
-                let target_col = moves[i][3];
-                let index2 = move_to_index(target_row,target_col);
-                pegs[index2].style.backgroundColor = "white";
-                pegs[index2].removeEventListener("click", movePeg);
-            }
-        }
-    }
     let rowNO = parseInt(selected.dataset.row);
     let colNO = parseInt(selected.dataset.col);
-    moveCount = validMoves(rowNO,colNO);
     // console.log("🔍 DATASET:", rowNO ,colNO);
     if (selected.style.backgroundColor === "green" ) return;
     // console.log(`Selected ${rowNO}, ${colNO}`);
     // console.log(`The value of peg is ${peg[rowNO][colNO]}`);
+    moveCount = validMoves(rowNO,colNO);
     if(selectedPeg == selected)
     {
         selectedPeg = null;
@@ -79,7 +57,7 @@ function selectPeg(event)
                 let target_row = moves[i][2];
                 let target_col = moves[i][3];
                 let index2 = move_to_index(target_row,target_col);
-                pegs[index2].style.backgroundColor = "";
+                pegs[index2].style.backgroundColor = "white";
                 pegs[index2].removeEventListener("click", movePeg)
             }
         return;
@@ -112,10 +90,6 @@ function movePeg(event) {
     let midRowNo = (targetRowNO + selectedRowNo) / 2;
     let midColNo =(targetColNO + selectedColNo) / 2;
 
-    if (!Number.isInteger(midRowNo) || !Number.isInteger(midColNo)) {
-        // console.error("❌ ERROR: Midpoint is not valid!", midRowNo, midColNo);
-        return;
-    }
     if (peg[midRowNo][midColNo] == 0 || peg[targetRowNO][targetColNO] == 1 || peg[selectedRowNo][selectedColNo] == 0) {
         // console.log("Invalid move: Check peg positions.");
         return;

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peg Solitaire</title>
+    <link rel="stylesheet" href="Peg-game.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Peg Solitaire</h1>
+        <p>Select a peg and jump over another peg to an empty space!</p>
+        <p>Goal: Leave only one peg on the board.</p>
+        
+        <div class="move-counter">Moves: 0</div>
+        
+        <div class="peg-board">
+            <div class="row">
+                <div class="peg" onclick="selectPeg(event)"></div>
+            </div>
+            <div class="row">
+                <div class="peg" onclick="selectPeg(event)"></div>
+                <div class="peg" onclick="selectPeg(event)"></div>
+            </div>
+            <div class="row">
+                <div class="peg" onclick="selectPeg(event)"></div>
+                <div class="peg" onclick="selectPeg(event)"></div>
+                <div class="peg" onclick="selectPeg(event)"></div>
+            </div>
+            <div class="row">
+                <div class="peg" onclick="selectPeg(event)"></div>
+                <div class="peg" onclick="selectPeg(event)"></div>
+                <div class="peg" onclick="selectPeg(event)"></div>
+                <div class="peg" onclick="selectPeg(event)"></div>
+            </div>
+            <div class="row">
+                <div class="peg" onclick="selectPeg(event)"></div>
+                <div class="peg" onclick="selectPeg(event)"></div>
+                <div class="peg" onclick="selectPeg(event)"></div>
+                <div class="peg" onclick="selectPeg(event)"></div>
+                <div class="peg" onclick="selectPeg(event)"></div>
+            </div>
+        </div>
+        <div class="Result"></div>
+        <button id="reset-btn" onclick="resetGame()">Reset Game</button>
+    </div>
+
+    <script src="Peg-game.js"></script>
+</body>
+</html>
