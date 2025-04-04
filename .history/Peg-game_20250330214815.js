@@ -56,14 +56,11 @@ function selectPeg(event)
         for(let i = 0; i<moveCount;i++)
             {
                 // console.log("Hello");
-                if(selected.style.backgroundColor === "black")
-                {
                 let target_row = moves[i][2];
                 let target_col = moves[i][3];
                 let index2 = move_to_index(target_row,target_col);
                 pegs[index2].style.backgroundColor = "white";
                 pegs[index2].removeEventListener("click", movePeg);
-                }       
             }
         }
     }

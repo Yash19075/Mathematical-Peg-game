@@ -40,36 +40,34 @@ function selectPeg(event)
 
 
     // if(selectedPeg != null) 
-    //     selectedPeg = null;
-    console.log("CLICKED ELEMENT:", event.target);
-    console.log("DATASET:", event.target.dataset);
+    //     selectPeg = null;
+    // console.log("CLICKED ELEMENT:", event.target);
+    // console.log("DATASET:", event.target.dataset);
     let selected = event.target;
-    if(selectedPeg != selected || selectedPeg != null)
-    {   
-        if (selected.style.backgroundColor === "green")
-        {
-            selected.addEventListener("click", movePeg);
-        }
+    // if(selectedPeg != selected || selectedPeg != null)
+    // {   
+    //     if (selected.style.backgroundColor === "green")
+    //     {
+    //         selected.addEventListener("click", movePeg);
+    //     }
             
-        else
-        {
-        for(let i = 0; i<moveCount;i++)
-            {
-                // console.log("Hello");
-                if(selected.style.backgroundColor === "black")
-                {
-                let target_row = moves[i][2];
-                let target_col = moves[i][3];
-                let index2 = move_to_index(target_row,target_col);
-                pegs[index2].style.backgroundColor = "white";
-                pegs[index2].removeEventListener("click", movePeg);
-                }       
-            }
-        }
-    }
+    //     else
+    //     {
+    //     for(let i = 0; i<moveCount;i++)
+    //         {
+    //             console.log("Hello");
+    //             let target_row = moves[i][2];
+    //             let target_col = moves[i][3];
+    //             let index2 = move_to_index(target_row,target_col);
+    //             pegs[index2].style.backgroundColor = "white";
+    //             pegs[index2].removeEventListener("click", movePeg);
+    //         }
+    //     }
+    // }
     let rowNO = parseInt(selected.dataset.row);
     let colNO = parseInt(selected.dataset.col);
     moveCount = validMoves(rowNO,colNO);
+    // console.log("🔍 DATASET:", rowNO ,colNO);
     if (selected.style.backgroundColor === "green" ) return;
     // console.log(`Selected ${rowNO}, ${colNO}`);
     // console.log(`The value of peg is ${peg[rowNO][colNO]}`);
@@ -115,6 +113,7 @@ function movePeg(event) {
     let midColNo =(targetColNO + selectedColNo) / 2;
 
     if (!Number.isInteger(midRowNo) || !Number.isInteger(midColNo)) {
+        // console.error("❌ ERROR: Midpoint is not valid!", midRowNo, midColNo);
         return;
     }
     if (peg[midRowNo][midColNo] == 0 || peg[targetRowNO][targetColNO] == 1 || peg[selectedRowNo][selectedColNo] == 0) {
